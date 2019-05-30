@@ -1,0 +1,7 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile group: 'io.netty', name: 'netty-all', version: '4.1.36.Final'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
+}
