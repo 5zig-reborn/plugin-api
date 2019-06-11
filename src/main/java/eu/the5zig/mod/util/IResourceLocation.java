@@ -15,11 +15,11 @@ public interface IResourceLocation {
 	/**
 	 * @return the resource path.
 	 */
-	String getResourcePath();
+	String callGetResourcePath();
 
 	/**
 	 * @return the resource domain (Eg. minecraft).
 	 */
-	String getResourceDomain();
+	String callGetResourceDomain();
 
 }

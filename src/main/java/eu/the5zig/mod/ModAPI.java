@@ -379,4 +379,9 @@ public interface ModAPI {
 	 */
 	void playSound(String domain, String sound, float pitch);
 
+	/**
+	 * Disables the Discord Rich Presence.
+	 */
+	void disableDiscordPresence();
+
 }

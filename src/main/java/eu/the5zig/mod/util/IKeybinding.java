@@ -17,11 +17,11 @@ public interface IKeybinding {
 	/**
 	 * @return true, if the keybinding has been pressed.
 	 */
-	boolean isPressed();
+	boolean callIsPressed();
 
 	/**
 	 * @return the key code of the keybinding.
 	 */
-	int getKeyCode();
+	int callGetKeyCode();
 
 }
