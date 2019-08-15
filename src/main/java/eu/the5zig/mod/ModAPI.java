@@ -19,6 +19,7 @@ import eu.the5zig.mod.plugin.PluginManager;
 import eu.the5zig.mod.render.Formatting;
 import eu.the5zig.mod.render.RenderHelper;
 import eu.the5zig.mod.server.ServerInstance;
+import eu.the5zig.mod.util.CoordinateClipboard;
 import eu.the5zig.mod.util.IKeybinding;
 import eu.the5zig.mod.util.NetworkPlayerInfo;
 import eu.the5zig.mod.util.PlayerGameMode;
@@ -383,5 +384,10 @@ public interface ModAPI {
 	 * Disables the Discord Rich Presence.
 	 */
 	void disableDiscordPresence();
+
+	/**
+	 * Gets the current CoordinateClipboard.
+	 */
+	CoordinateClipboard getCoordinateClipboard();
 
 }
