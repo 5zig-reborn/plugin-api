@@ -15,6 +15,24 @@ If you want to get started, see the examples directory, as there are multiple do
 
 Dependencies
 -
-Required dependencies are: log4j-api 2.0, log4j-core 2.0, netty-4.0.23, lwjgl-2.9.4 and authlib-1.5.17+. All of them can
-be found in the libraries folder of your .minecraft directory.
+The mod (and this API) use the Gradle build system.
 
+To get the library, first define a repository:
+```groovy
+repositories {
+    maven { 
+        url "https://repo.5zigreborn.eu/repository/maven-releases"
+    }
+}
+```
+Then, add the library as a dependency:
+```groovy
+dependencies {
+    compile group: 'eu.5zigreborn', name: 'plugin-api', version: '3.12.6'
+}
+```
+You will also need to add an `authlib` jar to your classpath. You can find it in your
+`.minecraft/libraries/com/mojang/authlib/1.5.25` folder.
+
+[Documentation](https://docs.5zigreborn.eu)
+- 

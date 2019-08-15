@@ -1,7 +1,39 @@
 apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+version = "3.12.6"
+
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile group: 'io.netty', name: 'netty-all', version: '4.1.36.Final'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'eu.5zigreborn'
+            artifactId = 'plugin-api'
+            version = project.version
+
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username nexusUsername
+                password nexusPassword
+            }
+            if (project.version.endsWith("-SNAPSHOT")) {
+                url "${nexusUrl}/repository/maven-snapshots"
+            } else {
+                url "${nexusUrl}/repository/maven-releases"
+            }
+        }
+    }
 }
