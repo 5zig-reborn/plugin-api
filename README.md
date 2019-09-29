@@ -20,15 +20,15 @@ The mod (and this API) use the Gradle build system.
 To get the library, first define a repository:
 ```groovy
 repositories {
-    maven { 
-        url "https://repo.5zigreborn.eu/repository/maven-releases"
+    maven {
+        url  "https://dl.bintray.com/5zig-reborn/maven" 
     }
 }
 ```
 Then, add the library as a dependency:
 ```groovy
 dependencies {
-    compile group: 'eu.5zigreborn', name: 'plugin-api', version: '3.12.6'
+    compile group: 'eu.5zigreborn', name: 'plugin-api', version: '3.13.0'
 }
 ```
 You will also need to add an `authlib` jar to your classpath. You can find it in your
