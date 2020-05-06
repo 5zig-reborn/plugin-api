@@ -192,7 +192,18 @@ public enum ChatColor {
 		return BY_CHAR.get(code);
 	}
 
-	public String getName() {
+    public static int getPingColor(long ping) {
+        int color;
+        if(ping <= 0) color = 0x949191;
+        else if(ping < 100) color = 0x0ce813;
+        else if(ping < 300) color = 0x068a0a;
+        else if(ping < 600) color = 0xd6c360;
+        else if(ping < 1000) color = 0xe33d2d;
+        else color = 0x75140b;
+        return color;
+    }
+
+    public String getName() {
 		return name;
 	}
 
