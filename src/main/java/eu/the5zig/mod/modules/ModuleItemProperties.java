@@ -161,4 +161,9 @@ public interface ModuleItemProperties {
 	 */
 	String shorten(float f);
 
+	/**
+	 * Sets the custom label for an item, or null for the default label.
+	 * @param label the new label
+	 */
+	void setCustomLabel(String label);
 }
