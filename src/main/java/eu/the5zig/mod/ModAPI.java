@@ -35,6 +35,7 @@ import eu.the5zig.mod.util.CoordinateClipboard;
 import eu.the5zig.mod.util.IKeybinding;
 import eu.the5zig.mod.util.NetworkPlayerInfo;
 import eu.the5zig.mod.util.PlayerGameMode;
+import eu.the5zig.mod.util.component.MessageComponent;
 import io.netty.buffer.ByteBuf;
 
 import java.util.List;
@@ -402,4 +403,11 @@ public interface ModAPI {
 	 */
 	CoordinateClipboard getCoordinateClipboard();
 
+	/**
+	 * Messages the player by showing a custom message, using our MessageComponent interface as an abstraction
+	 * over Minecraft's IChatComponent.
+	 * @param component the component to send
+	 * @param secondChat whether this message should be shown in the second chat
+	 */
+	void messagePlayerComponent(MessageComponent component, boolean secondChat);
 }
