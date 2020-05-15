@@ -147,4 +147,8 @@ public abstract class AbstractModuleItem {
 		return renderSettings;
 	}
 
+	/**
+	 * Override this method to listen to when the configuration is changed.
+	 */
+	public void settingsUpdated() {}
 }

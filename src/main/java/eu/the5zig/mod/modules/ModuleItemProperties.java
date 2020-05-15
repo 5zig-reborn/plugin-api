@@ -87,6 +87,13 @@ public interface ModuleItemProperties {
 	 */
 	<E extends Enum> void addSetting(String key, E defaultValue, Class<E> enumClass);
 
+	/**
+	 * Adds a setting to the module item.
+	 * @param key the identifier of the setting.
+	 * @param defaultValue the default value of the setting.
+	 */
+	void addSetting(String key, String defaultValue);
+
 	IConfigItem getSetting(String key);
 
 	/**
