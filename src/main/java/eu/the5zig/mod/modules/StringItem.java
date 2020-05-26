@@ -20,6 +20,7 @@
 package eu.the5zig.mod.modules;
 
 import eu.the5zig.mod.The5zigAPI;
+import eu.the5zig.mod.render.RenderHelper;
 import eu.the5zig.mod.render.RenderLocation;
 
 /**
@@ -38,9 +39,12 @@ public abstract class StringItem extends AbstractModuleItem {
 	 */
 	@Override
 	public void render(int x, int y, RenderLocation renderLocation, boolean dummy) {
-		String text = getText(dummy);
-
-		The5zigAPI.getAPI().getRenderHelper().drawString(text, x, y);
+		String prefix = getPrefix();
+		renderPrefix(prefix, x, y);
+		RenderHelper renderer = The5zigAPI.getAPI().getRenderHelper();
+		String value = String.valueOf(getValue(dummy));
+		int mainColor = getMainColor();
+		renderer.drawString(formatValue(value), x + renderer.getStringWidth(prefix), y, mainColor);
 	}
 
 	/**

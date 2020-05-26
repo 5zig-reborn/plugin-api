@@ -48,4 +48,7 @@ public interface ModuleItemFormatting {
 	 */
 	ChatColor getMainColor();
 
+	int getMainRgb();
+
+	int getPrefixRgb();
 }

@@ -19,6 +19,7 @@
 
 package eu.the5zig.mod.modules;
 
+import eu.the5zig.mod.The5zigAPI;
 import eu.the5zig.mod.render.RenderHelper;
 import eu.the5zig.mod.render.RenderLocation;
 
@@ -151,4 +152,29 @@ public abstract class AbstractModuleItem {
 	 * Override this method to listen to when the configuration is changed.
 	 */
 	public void settingsUpdated() {}
+
+	protected String formatValue(String value) {
+		String formatting = getProperties().getFormatting() != null &&
+				getProperties().getFormatting().getMainFormatting() != null
+				? getProperties().getFormatting().getMainFormatting().toString()
+				: The5zigAPI.getAPI().getFormatting().getMainFormatting();
+		return formatting + value;
+	}
+
+	protected int getMainColor() {
+		return getProperties().getFormatting() != null
+				? getProperties().getFormatting().getMainRgb()
+				: The5zigAPI.getAPI().getFormatting().getMainRgb();
+	}
+
+	protected int getPrefixColor() {
+		return getProperties().getFormatting() != null
+				? getProperties().getFormatting().getPrefixRgb()
+				: The5zigAPI.getAPI().getFormatting().getPrefixRgb();
+	}
+
+	protected void renderPrefix(String prefix, int x, int y) {
+		RenderHelper renderer = The5zigAPI.getAPI().getRenderHelper();
+		renderer.drawString(prefix, x, y, getPrefixColor());
+	}
 }

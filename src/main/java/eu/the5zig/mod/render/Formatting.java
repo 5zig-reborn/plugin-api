@@ -36,4 +36,7 @@ public interface Formatting {
 	 */
 	String getBracketFormatting();
 
+	int getMainRgb();
+
+	int getPrefixRgb();
 }
