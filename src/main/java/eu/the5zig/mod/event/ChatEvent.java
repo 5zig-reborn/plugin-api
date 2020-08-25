@@ -33,18 +33,23 @@ public class ChatEvent extends Event implements Cancelable {
 	 */
 	private String message;
 	/**
-	 * An object that represents a minecraft internal chat component. Used internally to send messages to the second chat.
+	 * An object that represents a 5zig chat component.
 	 */
 	private Object chatComponent;
+	/**
+	 * An object that represents a Minecraft chat component. Used internally to send messages to the second chat.
+	 */
+	private Object mcComponent;
 
 	/**
 	 * Indicates whether the event has been cancelled.
 	 */
 	private boolean cancelled;
 
-	public ChatEvent(String message, Object chatComponent) {
+	public ChatEvent(String message, Object chatComponent, Object mcComponent) {
 		this.originalMessage = message;
 		this.chatComponent = chatComponent;
+		this.mcComponent = mcComponent;
 	}
 
 	/**
@@ -74,10 +79,17 @@ public class ChatEvent extends Event implements Cancelable {
 	}
 
 	/**
-	 * @return the minecraft internal chat component.
+	 * @return the 5zig internal chat component.
 	 */
 	public Object getChatComponent() {
 		return chatComponent;
+	}
+
+	/**
+	 * @return the Minecraft internal chat component.
+	 */
+	public Object getMinecraftComponent() {
+		return mcComponent;
 	}
 
 	@Override
