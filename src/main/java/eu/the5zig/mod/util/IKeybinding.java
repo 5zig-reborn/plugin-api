@@ -22,7 +22,7 @@ package eu.the5zig.mod.util;
 /**
  * Represents a keybinding.
  *
- * @see eu.the5zig.mod.ModAPI#registerKeyBiding(String, int, String)
+ * @see eu.the5zig.mod.ModAPI#registerKeyBinding(String, int, String)
  */
 public interface IKeybinding {
 
@@ -36,4 +36,5 @@ public interface IKeybinding {
 	 */
 	int callGetKeyCode();
 
+	
 }
